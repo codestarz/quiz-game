@@ -1,19 +1,15 @@
 import Image from 'next/image'
-import { AiFillInfoCircle } from 'react-icons/ai'
 import categories from '@/assets/categories.json'
-import { useState } from 'react'
 import { useBoundStore } from '@/store/useBoundStore'
 
 export default function GameInfo () {
 	const { queries } = useBoundStore(state => state)
-	const [showInfo, setShowInfo] = useState(false)
 
 	const mode = queries.timemode && queries.infinitymode ? 'Time | Infinity' : !queries.timemode && !queries.infinitymode ? 'Classic' : queries.timemode ? 'Time' : 'Infinity'
 
 	return (
 		<>
-			
-			<aside className={`fixed h-fit transition-all z-10 lg:bottom-4 left-4 md:top-1/2 md:-translate-y-1/2 text-center text-slate-900 font-medium lg:!scale-100 lg:!opacity-100 ${showInfo ? 'bottom-12 scale-100 opacity-100' : 'bottom-0 scale-20 opacity-0'}`}>
+				<aside className={`fixed h-fit transition-all z-10 lg:bottom-4 left-4 md:top-1/2 md:-translate-y-1/2 text-center text-slate-900 font-medium lg:!scale-100 lg:!opacity-100 ${showInfo ? 'bottom-12 scale-100 opacity-100' : 'bottom-0 scale-20 opacity-0'}`}>
 				<div className='flex gap-2'>
 					{
 						!queries.infinitymode && <span className='bg-white p-2 rounded-md text-sm w-full pt-[9px] grid place-items-center' title='Number of questions'>

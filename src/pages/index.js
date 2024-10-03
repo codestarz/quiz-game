@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import MainHome from '@/components/Home/MainHome'
-import GameModes from '@/components/Home/GameModes'
 import Categories from '@/components/Home/Categories'
 import { useEffect } from 'react'
 
