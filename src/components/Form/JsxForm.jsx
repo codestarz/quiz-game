@@ -9,7 +9,6 @@ export default function JsxForm ({ handleInputs, nowQueries }) {
 	return (
 		<>
 			<div className='flex gap-2 sm:gap-5 flex-col'>
-				
 				<fieldset className='p-1 relative'>
 					<legend className='text-lg font-semibold mb-2'>Questions</legend>
 					<div className="cntr shadow-sm" >
