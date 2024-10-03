@@ -1,42 +1,7 @@
-import Image from 'next/image'
-import categories from '@/assets/categories.json'
-import { useBoundStore } from '@/store/useBoundStore'
-
 export default function GameInfo () {
-	const { queries } = useBoundStore(state => state)
-
-	const mode = queries.timemode && queries.infinitymode ? 'Time | Infinity' : !queries.timemode && !queries.infinitymode ? 'Classic' : queries.timemode ? 'Time' : 'Infinity'
 
 	return (
 		<>
-				<aside className={'fixed h-fit transition-all z-10 lg:bottom-4 left-4 md:top-1/2 md:-translate-y-1/2 text-center text-slate-900 font-medium lg:!scale-100 lg:!opacity-100 '}>
-				<div className='flex gap-2'>
-					{
-						!queries.infinitymode && <span className='bg-white p-2 rounded-md text-sm w-full pt-[9px] grid place-items-center' title='Number of questions'>
-							{queries.questions}
-						</span>
-					}					{
-						queries.timemode && <span className='bg-white p-2 rounded-md text-sm w-full pt-[9px] grid place-items-center' title='Time'>
-							{queries.time}
-						</span>
-					}
-				</div>
-				<div className='bg-white p-2 rounded-md mt-2 flex justify-center gap-1 items-center' title='Mode'>
-					<span className='pt-[2px]'>{mode}</span>
-				</div>
-				<div className='bg-white p-2 rounded-md mt-2 grid grid-cols-2 gap-2 justify-items-center'>
-					{queries.categories.map(category => {
-						const cat = categories.find(cat => cat.id === category)
-						return <Image key={category} title={cat.name} alt={cat.name}
-							className="p-1 rounded"
-							style={{ backgroundColor: cat.color }}
-							src={`/categories-icons/${cat.name.toLowerCase()}.svg`}
-							width={33} height={33}
-						/>
-					})}
-				</div>
-			</aside>
-
 			<style jsx global>
 				{`
 				#__next {

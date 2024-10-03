@@ -19,22 +19,7 @@ export default function JsxForm ({ handleInputs, nowQueries }) {
 	return (
 		<>
 			<div className='flex gap-2 sm:gap-5 flex-col'>
-				<fieldset className='p-1'>
-					<legend className='text-lg font-semibold mb-2'>Wilcards</legend>
-					<ul className='flex gap-3 justify-between font-medium'>
-						{
-							WILCARDS.map(({ name, icon, amount }) => (
-								<li key={name} className={'flex gap-2 justify-center items-center'}>
-									<div className='p-[10px] aspect-square rounded text-white bg-blue-500 transition-transform text' title={name}>
-										{icon}
-									</div>
-									<span className='text-xl'>x{amount}</span>
-								</li>
-							))
-						}
-					</ul>
-				</fieldset>
-
+				
 				<fieldset className='p-1 relative'>
 					<legend className='text-lg font-semibold mb-2'>Questions</legend>
 
