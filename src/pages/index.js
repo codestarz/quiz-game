@@ -10,10 +10,9 @@ export default function Main () {
 	return (
 		<>
 			<Head>
-				<title>Quizi</title>
+				<title>Quiz</title>
 			</Head>
 			<MainHome />
-			<GameModes />
 			<Categories />
 			<style jsx global>
 				{`
