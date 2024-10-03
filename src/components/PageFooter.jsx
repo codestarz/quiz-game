@@ -10,8 +10,6 @@ export default function Footer () {
 
 	useEffect(() => localStorage.setItem('sound', sound), [sound])
 
-
-
 	return (
 		<footer className='fixed right-4 bottom-3 z-20'>
 		</footer>
